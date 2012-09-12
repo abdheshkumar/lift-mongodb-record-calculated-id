@@ -14,19 +14,13 @@ object Main {
     val longitude = 50.166667
 
     val location = Location.createRecord
-      .id((country + ":" + area + ":" + city).toLowerCase())
-      .country(country)
-      .area(area)
-      .city(city)
-      .latitude(latitude)
-      .longitude(longitude)
-      .save
+    location.set(country, area, city, latitude, longitude).save
 
-    // val location = Location.createRecord
-    // location.init(country, area, city)
-    // location.latitude(latitude)
-    // location.longitude(longitude)
-    // location.save
+    println("Country:" + location.country)
+    println("Area:" + location.area)
+    println("City:" + location.city)
+    println("Latitude:" + location.latitude)
+    println("Longitude:" + location.longitude)
 
     println("Ended.")
   }
