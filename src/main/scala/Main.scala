@@ -14,8 +14,14 @@ object Main {
     val longitude = 50.166667
 
     val location = Location.createRecord
-    location.set(country, area, city, latitude, longitude).save
+        .country(country)
+        .area(area)
+        .city(city)
+        .latitude(latitude)
+        .longitude(longitude)
+        .save
 
+    println("Id:" + location.id)
     println("Country:" + location.country)
     println("Area:" + location.area)
     println("City:" + location.city)
